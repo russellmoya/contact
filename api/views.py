@@ -9,11 +9,11 @@ from .serializers import ListNumeroSerializers
 
 class checkNumber(APIView):
     def post(self, request,):
-        numForCheck = ListNumero.objects.get(numero=request.POST.get('numero', False))
+        numForCheck = ListNumero.objects.get(numero=request.data('numero'))
         print(request.data)
         print(numForCheck)
-        print(numForCheck.count())
-        print( ListNumeroSerializers(numForCheck).data)
+       # print(numForCheck.count())
+        #print( ListNumeroSerializers(numForCheck).data)
         return Response({"error": "error serializer"})
         # num = numForCheck.count()
         # if(num>0):
