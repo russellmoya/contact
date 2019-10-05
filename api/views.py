@@ -13,7 +13,13 @@ class checkNumber(APIView):
         num = numForCheck.count()
         if(num>0):
             serializer = ListNumeroSerializers(numForCheck)
-            return Response({ "check": True , "numero":serializer.data })
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"check": True, "numero": serializer.data})
+            return Response({"error":"error serializer"})
+
+
 
 
         else:
