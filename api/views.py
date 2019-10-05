@@ -15,7 +15,7 @@ class checkNumber(APIView):
             serializer = ListNumeroSerializers(numForCheck)
 
             if serializer.is_valid():
-                serializer.save()
+                
                 return Response({"check": True, "numero": serializer.data})
             return Response({"error":"error serializer"})
 
