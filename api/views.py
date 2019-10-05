@@ -12,8 +12,8 @@ class checkNumber(APIView):
         numForCheck = ListNumero.objects.get(numero=request.data['numero'])
         print(request.data)
         print(numForCheck)
-        print(numForCheck.count())
-       # print( ListNumeroSerializers(numForCheck))
+    #    print(numForCheck.count())
+        print( ListNumeroSerializers(numForCheck).data)
         return Response({"error": "error serializer"})
         # num = numForCheck.count()
         # if(num>0):
