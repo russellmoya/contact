@@ -14,10 +14,10 @@ class checkNumber(APIView):
         if(num>0):
             serializer = ListNumeroSerializers(numForCheck)
 
-            if serializer.is_valid():
-                
-                return Response({"check": True, "numero": serializer.data})
-            return Response({"error":"error serializer"})
+           # if serializer.is_valid():
+
+            return Response({"check": True, "numero": serializer.data})
+           # return Response({"error":"error serializer"})
 
 
 
