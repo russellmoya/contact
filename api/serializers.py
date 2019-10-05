@@ -10,7 +10,7 @@ class NewsSerializers(serializers.ModelSerializer):
 class ListNumeroSerializers(serializers.ModelSerializer):
     class Meta:
         model = ListNumero
-        fields = ('id','numero','entreprise','departement','level','code')
+        fields = ['id','numero','entreprise','departement','level','code']
 
 class DepartementSerializers(serializers.ModelSerializer):
     class Meta:
