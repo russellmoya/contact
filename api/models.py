@@ -42,18 +42,18 @@ class ListNumero(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "{} {}".format(self.telephone , self.created)
+        return "{} {}".format(self.numero , self.created)
 
 class Personnel(models.Model):
     user = models.OneToOneField(ListNumero,on_delete=models.CASCADE,primary_key=True)
-    nom = models.CharText()
-    prenom = models.CharText()
-    prostnom = models.CharText(null=True,blank=True,default="")
-    telephone2 = models.CharText(null=True,blank=True ,default="")
-    adresse = models.CharText(null=True,blank=True ,default="")
-    description = models.CharText(null=True,blank=True ,default="")
+    nom = models.TextField()
+    prenom = models.TextField()
+    prostnom = models.TextField(null=True,blank=True,default="")
+    telephone2 = models.TextField(null=True,blank=True ,default="")
+    adresse = models.TextField(null=True,blank=True ,default="")
+    description = models.TextField(null=True,blank=True ,default="")
     email = models.EmailField()
-    password = models.CharText()
+    password = models.TextField()
     isActive = models.BooleanField(default=True)
     imageUrl = models.ImageField(upload_to="upload/personnel",null=True,blank=True)
     created = models.DateTimeField(auto_now_add=True)
