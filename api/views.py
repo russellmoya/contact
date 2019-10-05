@@ -10,22 +10,25 @@ from .serializers import ListNumeroSerializers
 class checkNumber(APIView):
     def post(self, request,):
         numForCheck = ListNumero.objects.filter(numero=request.data['numero'])
-        num = numForCheck.count()
-        if(num>0):
-            serializer = ListNumeroSerializers(numForCheck,many=True)
-
-            if serializer.is_valid():
-
-                 return Response({"check": True, "numero": serializer.data})
-           # return Response({"error":"error serializer"})
-
-
-
-
-        else:
-            return Response({"check": False, "numero": ""})
-
-
+        print(request.data)
+        print(numForCheck)
+        return Response({"error": "error serializer"})
+        # num = numForCheck.count()
+        # if(num>0):
+        #     serializer = ListNumeroSerializers(numForCheck,many=True)
+        #
+        #     if serializer.is_valid():
+        #
+        #          return Response({"check": True, "numero": serializer.data})
+        #    # return Response({"error":"error serializer"})
+        #
+        #
+        #
+        #
+        # else:
+        #     return Response({"check": False, "numero": ""})
+        #
+        #
 
 
 
