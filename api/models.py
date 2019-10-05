@@ -14,7 +14,7 @@ class Entreprise(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "{} {} ".format(self.nom  ,self.created)
+        return "{}  ".format(self.nom  )
 
 class Departement(models.Model):
     nom = models.CharField(max_length=500,unique=True)
@@ -26,7 +26,7 @@ class Departement(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "{} {}".format(self.nom  ,self.created)
+        return "{} ".format(self.nom  )
 
 class ListNumero(models.Model):
     numero = models.CharField(max_length=500,unique=True)
@@ -42,7 +42,7 @@ class ListNumero(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "{} {}".format(self.numero , self.created)
+        return "{} ".format(self.numero )
 
 class Personnel(models.Model):
     user = models.OneToOneField(ListNumero,on_delete=models.CASCADE,primary_key=True)
@@ -63,7 +63,7 @@ class Personnel(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "{} {} {} {} ".format(self.nom, self.prenom, self.telephone2 ,self.created)
+        return "{} {} {} ".format(self.nom, self.prenom, self.telephone2)
 
 class News(models.Model):
     user = models.ForeignKey(Personnel,on_delete=models.CASCADE)
@@ -75,7 +75,7 @@ class News(models.Model):
     class Meta:
         ordering = ['-created']
     def __str__(self):
-        return "{} {} {} ".format(self.titre, self.contenu, self.created)
+        return "{}  ".format(self.titre)
 
 
 
