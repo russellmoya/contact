@@ -12,7 +12,7 @@ class checkNumber(APIView):
         numForCheck = ListNumero.objects.filter(numero=request.data['numero'])
         num = numForCheck.count()
         if(num>0):
-            serializer = ListNumeroSerializers(numForCheck)
+            serializer = ListNumeroSerializers(numForCheck,many=True)
 
             if serializer.is_valid():
 
